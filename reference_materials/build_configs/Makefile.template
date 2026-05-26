@@ -1,0 +1,50 @@
+# Makefile Template for Embedded C Projects
+# Copy this to your project directory and customize as needed
+
+CC      = gcc
+CFLAGS  = -Wall -Wextra -Werror -pedantic -std=c11 -g -O0
+LDFLAGS = 
+SRCS    = main.c
+OBJS    = $(SRCS:.c=.o)
+TARGET  = program
+
+# Add your source files here:
+# SRCS  += utils.c drivers.c helpers.c
+
+.PHONY: all clean run valgrind cppcheck
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Automatic dependency generation
+DEPS = $(OBJS:.o=.d)
+-include $(DEPS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -MMD -MP -c -o $@ $<
+
+clean:
+	rm -f $(OBJS) $(DEPS) $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
+
+# Memory safety check
+valgrind: $(TARGET)
+	valgrind --leak-check=full --track-origins=yes ./$(TARGET)
+
+# Static analysis
+cppcheck:
+	cppcheck --enable=all --std=c11 .
+
+# All checks
+check: $(TARGET) cppcheck valgrind
+
+# For debugging
+debug: $(TARGET)
+	gdb ./$(TARGET)

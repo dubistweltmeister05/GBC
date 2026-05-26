@@ -1,0 +1,102 @@
+# Compiled Object Files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+
+# Executable and Binary Files
+/bin/
+/Debug/
+/Release/
+*.elf
+*.hex
+*.bin
+
+# Build Directories
+/build/
+/cmake-build-debug/
+/cmake-build-release/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+.clang-format
+
+# Dependency Files
+*.d
+*.depend
+
+# CMake Artifacts
+*.cmake
+install_manifest.txt
+
+# Testing and Debugging
+/test_output/
+*.gcda
+*.gcno
+coverage.info
+core.*
+vgcore.*
+
+# Valgrind and Analysis Output
+*.log
+*.cachegrind
+*.callgrind
+cppcheck_report.txt
+
+# Temporary Files
+*.tmp
+*.bak
+*.backup
+*.swp
+*.swo
+~*
+
+# OS-Specific Files
+.DS_Store
+Thumbs.db
+.directory
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# GDB and Debugger
+.gdbinit
+.gdb_history
+.gdbinit.local
+
+# Backup Files
+*.orig
+*.rej
+
+# Generated Documentation
+/docs/
+doxygen_output/
+
+# Python Cache (if any Python scripts)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Project-Specific (add as needed)
+# *.hex  - uncomment to ignore hex files
+# *.elf  - uncomment to ignore elf files
