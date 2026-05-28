@@ -5,12 +5,11 @@
 #define row 2
 
 /*
-we are trying to avoid the simple matrix[][]
+we are trying to avoid the simple matrix[i][j]
 pattern, so the logic being applied here is as follows - 
 
 a matrix decays into a pointer to an array of something 
 - int (*)[rows]
-
 this means that dereferencing a matrixz variable gives the pointer to 
 the base of an array of length [rows]. 
 
