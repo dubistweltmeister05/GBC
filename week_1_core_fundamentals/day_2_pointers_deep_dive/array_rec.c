@@ -32,7 +32,7 @@ void revArr(void *arr, size_t elementSize, size_t length)
         unsigned char *left = base + i * elementSize;
         unsigned char *right = base + (length - 1 - i) * elementSize;
 
-        /*since I wanted to be a smartass, I not have to swap out all BYTES
+        /*since I wanted to be a smartass, I now have to swap out all BYTES
         for each of the members, a fuck up that I once did was simply swap
         ONE byte and not all of them.
         */
