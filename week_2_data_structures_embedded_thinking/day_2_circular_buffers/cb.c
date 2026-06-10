@@ -37,3 +37,12 @@ void rb_flush(ring_buffer_t *rb) {
     rb->tail = 0;
     rb->count = 0;
 }
+
+void rb_print(ring_buffer_t *rb){
+    printf("Buffer contents: ");
+    for(size_t i=0;i<rb->count;i++){
+        size_t index = (rb->head + i) % rb->capacity;
+        printf("%02X ", rb->buf[index]);
+    }
+    printf("\n");
+}

@@ -15,3 +15,4 @@ int rb_push(ring_buffer_t *rb, uint8_t byte);
 int rb_pop(ring_buffer_t *rb, uint8_t *out);
 size_t rb_available(ring_buffer_t *rb);
 void rb_flush(ring_buffer_t *rb);
+void rb_print(ring_buffer_t *rb);
